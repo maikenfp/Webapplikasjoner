@@ -1,0 +1,79 @@
+{"questions": [
+    {
+      "title": "Hva kan vi bruke for å gjøre tester raskere?",
+      "answers": [
+        { "answere": "Lag 1 test for hele programmet" },
+        {
+          "answere": "Mocks, fakes og spies",
+          "correct": true
+        },
+        {
+          "answere": "Ved å teste asynkront"
+        },
+        {
+          "answere": "Ved å bruke .fastTest()"
+        }
+      ],
+      "helper": {
+        "text": "For å gjøre tester, spesielt for henting av data fra API, vil det være ønskelig å bytte ut funksjonaliteten med noe annet."
+      }
+    },
+    {
+        "title": "Hvorfor bør du teste?",
+        "answers": [
+          { "answere": "For at programmet ikke skal krasje" },
+          {
+            "answere": "For å kunne fortelle at programmet er testet"
+          },
+          {
+            "answere": "Det er ingen grunn til å teste hvis man har full kontroll"
+          },
+          {
+            "answere": "For å gjøre grundig sjekk at programmet gjør det den skal, og at endringer eller tidligere bugs ikke forårsaker skade",
+            "correct": true
+          }
+        ],
+        "helper": {
+          "text": "Testing er veldig nyttig for å passe på at alt funker som det skal, og at ingen endringer ødelegger programmet"
+        }
+      },
+      {
+        "title": "Hvordan metoder kan vi bruke for å teste?",
+        "answers": [
+          { "answere": "Manuelle tester, der maskinen gjennomfører testene for oss, og automatiserte tester, hvor vi tester selv" },
+          {
+            "answere": "Det finnes ingen metoder"
+          },
+          {
+            "answere": "Penn og papir"
+          },
+          {
+            "answere": "Automatiserte tester, hvor maskinen gjennomfører testene for oss, og manuelle tester, hvor man tester selv",
+            "correct": true
+          }
+        ],
+        "helper": {
+          "text": "Man kan utføre automatiserte eller manuelle tester"
+        }
+      },
+      {
+        "title": "Hvorfor teste Hooks?",
+        "answers": [
+          { "answere": "Det vil være raskere da man slipper å rendre for alle steg ved endring" },
+          {
+            "answere": "For å kunne jobbe rett mot variabler og funksjoner, og slippe å teste mot DOM elementer"
+          },
+          {
+            "answere": "Vil gjøre at man kan droppe å teste hele komponenter, og enklere gjenbruke kode"
+          },
+          {
+            "answere": "Alle de nevnte",
+            "correct": true
+          }
+        ],
+        "helper": {
+          "text": "Det vil kunne være raskere da vi slipper å rendre alle steg, slipper å teste mot DOM, og kan jobbe rett mot variabler og funksjoner, samt enklere gjenbruk av kode"
+        }
+      }
+  ]
+}
