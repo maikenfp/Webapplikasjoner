@@ -1,15 +1,18 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-const animals = ["Løve", "Elefant"]
+export const animals = [
+  {animal : "Løve"},
+  {animal : "Elefant"}
+]
 
 export default function handler(req, res) {
   if(req.method === 'POST'){
 
-      const animal = req.body
+      const {animal} = req.body
       animals.push(animal)
       res.status(201).json(animals)
-
-  } else {
+      }
+      else {
 
       res.status(200).json(animals)
 

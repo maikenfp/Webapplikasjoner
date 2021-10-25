@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from 'axios'
+import { animals } from "../api/animals"
 
 const Animal = () => {
 const  [animal, setAnimal] = useState("")
@@ -10,22 +11,28 @@ const sendAnimals = async (event) =>{
     console.log(data)
 }
 
-const getAnimals = async (event) => {
-    event.preventDefault()
+const getAnimals = async () => {
     const data = await axios.get('/api/animals')
     console.log(data)
 }
 
+
 return(
     <>
+    <div>
     <form onSubmit={sendAnimals}>
     <input type="text" value={animal} onChange={(e) => setAnimal(e.target.value)}/>
     <button type="submit">Send</button>
     </form>
-    <button type="button" onClick={getAnimals}>Klikk meg</button>
+    <h2>Liste med dyr:</h2>
     <ul>
-        <li></li>
-    </ul>
+        {animals.map((data, key) => {
+            return(
+                <li key={key}>{data.animal}</li>
+        )})}
+    </ul> 
+    <button type="button" onClick={getAnimals}>Hei</button>
+    </div>
     </>
 )
 }
