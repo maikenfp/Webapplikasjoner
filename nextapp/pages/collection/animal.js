@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { animals } from "../api/animals"
+import List from "../../components/List"
 
 const Animal = () => {
 const  [animal, setAnimal] = useState("")
@@ -13,8 +14,13 @@ const sendAnimals = async (event) =>{
 
 const getAnimals = async () => {
     const data = await axios.get('/api/animals')
-    console.log(data)
+    setAnimal(data)
+    
 }
+
+useEffect(() => {
+    getAnimals(animal)
+}, [animals])
 
 
 return(
@@ -25,13 +31,15 @@ return(
     <button type="submit">Send</button>
     </form>
     <h2>Liste med dyr:</h2>
+    <List list={animals}/>
     <ul>
         {animals.map((data, key) => {
-            return(
-                <li key={key}>{data.animal}</li>
-        )})}
-    </ul> 
-    <button type="button" onClick={getAnimals}>Hei</button>
+            return (
+                <li key={key}>{data}</li>
+            )
+        })}
+    </ul>
+    <button type="button" onClick={getAnimals}>Klikk her for listen med dyr</button>
     </div>
     </>
 )
